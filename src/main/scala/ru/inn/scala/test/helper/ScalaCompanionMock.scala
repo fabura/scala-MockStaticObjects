@@ -1,4 +1,4 @@
-package ru.inn.rbac.ru.inn.scala.test.helper
+package ru.inn.scala.test.helper
 
 import org.powermock.api.easymock.PowerMock
 import org.powermock.reflect.Whitebox
@@ -21,7 +21,13 @@ object ScalaCompanionMock {
     }
   }
 
-  def mock[T <: ScalaObject](obj: T): T = {
+
+  def mock[T](obj: T): T = {
     mock(obj.getClass)
+  }
+
+
+  def mock[T](clazzName: String): T = {
+    mock[T](Class.forName(clazzName).asInstanceOf[Class[T]])
   }
 }
