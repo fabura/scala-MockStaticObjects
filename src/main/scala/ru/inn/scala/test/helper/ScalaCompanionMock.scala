@@ -21,7 +21,6 @@ object ScalaCompanionMock {
     }
   }
 
-
   def mock[T](obj: T): T = {
     mock(obj.getClass)
   }
